@@ -1,0 +1,35 @@
+{
+  "name": "admin-panel-heatmap",
+  "version": "1.0.0",
+  "description": "Vue 2 Admin Panel with Orders Heatmap for Lucknow",
+  "main": "src/main.js",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "dev": "vue-cli-service serve --mode development"
+  },
+  "keywords": [
+    "vue",
+    "admin-panel",
+    "heatmap",
+    "maps"
+  ],
+  "author": "Mohammad Abbas",
+  "license": "MIT",
+  "dependencies": {
+    "@vue/cli-service": "^5.0.9",
+    "autoprefixer": "^10.4.21",
+    "leaflet": "^1.9.4",
+    "leaflet.heat": "^0.2.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.0",
+    "vue": "^2.7.14",
+    "vue-loader": "^17.4.2",
+    "vue-router": "^3.6.5",
+    "vue-template-compiler": "^2.7.16",
+    "vue2-leaflet": "^2.7.1",
+    "webpack": "^5.101.3",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  }
+}

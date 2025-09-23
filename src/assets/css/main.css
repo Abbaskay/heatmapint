@@ -1,0 +1,478 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+    color: #f8fafc;
+    min-height: 100vh;
+  }
+  
+  * {
+    scroll-behavior: smooth;
+    color: inherit;
+  }
+  
+  /* Force all header and navbar elements to be visible */
+  header, nav, .navbar, .header {
+    background: rgba(30, 41, 59, 0.95) !important;
+    color: #f8fafc !important;
+  }
+  
+  header *, nav *, .navbar *, .header * {
+    color: #f8fafc !important;
+  }
+  
+  /* Override any white backgrounds */
+  .bg-white {
+    background-color: rgba(30, 41, 59, 0.95) !important;
+  }
+  
+  .bg-gray-50 {
+    background-color: rgba(51, 65, 85, 0.8) !important;
+  }
+  
+  .bg-gray-100 {
+    background-color: rgba(71, 85, 105, 0.8) !important;
+  }
+}
+
+@layer components {
+  /* Professional Buttons with high contrast */
+  .btn-primary {
+    background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+    color: white !important;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.3);
+    border: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px 0 rgba(59, 130, 246, 0.4);
+  }
+  
+  .btn-secondary {
+    background: rgba(100, 116, 139, 0.2);
+    color: #f8fafc !important;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(100, 116, 139, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn-secondary:hover {
+    background: rgba(100, 116, 139, 0.3);
+    border-color: rgba(100, 116, 139, 0.5);
+  }
+  
+  /* Professional Glass Cards with high contrast */
+  .glass-card {
+    background: rgba(30, 41, 59, 0.95) !important;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(100, 116, 139, 0.3) !important;
+    border-radius: 16px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    color: #f8fafc !important;
+  }
+  
+  .glass-card * {
+    color: inherit !important;
+  }
+  
+  .glass-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 25px 30px -5px rgba(0, 0, 0, 0.4), 0 15px 15px -5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .glass-card-secondary {
+    background: rgba(51, 65, 85, 0.8) !important;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(100, 116, 139, 0.2) !important;
+    border-radius: 12px;
+    color: #f8fafc !important;
+  }
+  
+  /* Professional Input Styles */
+  .glass-input {
+    background: rgba(51, 65, 85, 0.6) !important;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(100, 116, 139, 0.3) !important;
+    border-radius: 10px;
+    padding: 12px 16px;
+    color: #f8fafc !important;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+  
+  /* Search bar specific styles */
+  input[type="text"], 
+  input[type="search"], 
+  .search-input,
+  input[placeholder*="Search"] {
+    background: rgba(51, 65, 85, 0.8) !important;
+    color: #f8fafc !important;
+    border: 1px solid rgba(100, 116, 139, 0.4) !important;
+    border-radius: 12px;
+    padding: 12px 16px;
+  }
+  
+  input[type="text"]::placeholder,
+  input[type="search"]::placeholder,
+  .search-input::placeholder,
+  input[placeholder*="Search"]::placeholder {
+    color: #94a3b8 !important;
+  }
+  
+  .glass-input:focus {
+    outline: none;
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    background: rgba(51, 65, 85, 0.8) !important;
+  }
+  
+  .glass-input::placeholder {
+    color: #94a3b8 !important;
+  }
+  
+  .glass-input-container {
+    position: relative;
+  }
+  
+  /* Sidebar Styles with high contrast */
+  .sidebar-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    margin: 4px 8px;
+    color: #cbd5e1 !important;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+  }
+  
+  .sidebar-item:hover {
+    background: rgba(248, 250, 252, 0.1) !important;
+    color: #f8fafc !important;
+    transform: translateX(4px);
+  }
+  
+  .sidebar-item.active {
+    background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%) !important;
+    color: white !important;
+    box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.3);
+  }
+  
+  /* Professional Animations */
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  
+  .animate-fade-in-up {
+    animation: slideUp 0.8s ease-out forwards;
+  }
+  
+  .animate-gradient-x {
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 3s ease-in-out infinite;
+  }
+  
+  /* Custom Scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(51, 65, 85, 0.3);
+    border-radius: 3px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(100, 116, 139, 0.5);
+    border-radius: 3px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(100, 116, 139, 0.7);
+  }
+}
+
+/* Professional Keyframe Animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Professional Table Styles */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+table thead th {
+  background: rgba(51, 65, 85, 0.5) !important;
+  color: #cbd5e1 !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 12px;
+}
+
+table tbody tr {
+  border-bottom: 1px solid rgba(100, 116, 139, 0.2);
+}
+
+table tbody tr:hover {
+  background: rgba(248, 250, 252, 0.05) !important;
+}
+
+table tbody td {
+  color: #f8fafc !important;
+}
+
+/* Professional Form Elements */
+select.glass-input {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23cbd5e1' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+/* Force high contrast text colors throughout */
+h1, h2, h3, h4, h5, h6 {
+  color: #f8fafc !important;
+  font-weight: 700;
+}
+
+p, span, div, label {
+  color: #f8fafc !important;
+}
+
+.text-gray-900,
+.text-gray-800,
+.text-gray-700,
+.text-gray-600,
+.text-gray-500 {
+  color: #f8fafc !important;
+}
+
+.text-gray-400 {
+  color: #94a3b8 !important;
+}
+
+.text-gray-300 {
+  color: #cbd5e1 !important;
+}
+
+.text-gray-200 {
+  color: #e2e8f0 !important;
+}
+
+/* Status colors with high contrast */
+.text-green-400,
+.text-green-300 {
+  color: #4ade80 !important;
+}
+
+.text-blue-400,
+.text-blue-300 {
+  color: #60a5fa !important;
+}
+
+.text-purple-400,
+.text-purple-300 {
+  color: #c084fc !important;
+}
+
+.text-orange-400,
+.text-orange-300 {
+  color: #fb923c !important;
+}
+
+.text-cyan-400,
+.text-cyan-300 {
+  color: #22d3ee !important;
+}
+
+.text-pink-400,
+.text-pink-300 {
+  color: #f472b6 !important;
+}
+
+.text-emerald-400,
+.text-emerald-300 {
+  color: #34d399 !important;
+}
+
+.text-yellow-400,
+.text-yellow-300 {
+  color: #fbbf24 !important;
+}
+
+.text-red-400,
+.text-red-300 {
+  color: #f87171 !important;
+}
+
+/* Custom scrollbar for better visibility */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(51, 65, 85, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+}
+
+/* Comprehensive background overrides for slate blue theme */
+.bg-white, 
+.bg-gray-50, 
+.bg-gray-100,
+.bg-gray-200 {
+  background-color: rgba(30, 41, 59, 0.95) !important;
+}
+
+.bg-gray-300 {
+  background-color: rgba(51, 65, 85, 0.9) !important;
+}
+
+/* Header and navigation specific overrides */
+.navbar-glass,
+.nav,
+.navigation,
+.header-container,
+.top-bar {
+  background: rgba(30, 41, 59, 0.95) !important;
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(100, 116, 139, 0.3) !important;
+}
+
+/* Ensure all navigation text is visible */
+.nav-link,
+.navbar-nav .nav-link,
+.navbar-brand,
+.navbar-text {
+  color: #f8fafc !important;
+}
+
+/* Avatar and profile elements */
+.avatar,
+.profile-info,
+.user-info {
+  color: #f8fafc !important;
+}
+
+.avatar *,
+.profile-info *,
+.user-info * {
+  color: inherit !important;
+}
+
+/* Notification badge */
+.badge,
+.notification-badge {
+  background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+  color: white !important;
+}
+
+/* Search container styling */
+.search-container,
+.search-wrapper {
+  background: rgba(51, 65, 85, 0.6) !important;
+  border-radius: 12px;
+  border: 1px solid rgba(100, 116, 139, 0.3) !important;
+}
+
+/* Icon styling for better visibility */
+.icon,
+.fa,
+.material-icons,
+svg {
+  color: #f8fafc !important;
+}
+
+/* Button text overrides */
+button,
+.btn {
+  color: inherit !important;
+}
+
+button *,
+.btn * {
+  color: inherit !important;
+}
