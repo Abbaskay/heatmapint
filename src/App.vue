@@ -9,7 +9,7 @@
       <Navbar />
       
       <!-- Page Content -->
-      <main class="flex-1 overflow-x-hidden overflow-y-auto p-6" style="background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);">
+      <main class="flex-1 overflow-x-hidden overflow-y-auto p-6 bg-gray-50">
         <router-view />
       </main>
     </div>

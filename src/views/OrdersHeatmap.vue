@@ -1,13 +1,12 @@
 <template>
-  <div class="space-y-6 min-h-screen p-6">
+  <div class="space-y-6">
     <!-- Enhanced Page Header with Real-time Stats -->
-    <div class="glass-card p-8 animate-fade-in">
+    <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-sm">
       <div class="flex justify-between items-start">
         <div class="space-y-3">
           <div class="flex items-center space-x-4">
             <div class="relative">
-              <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-600 rounded-full blur-md opacity-30 animate-pulse"></div>
-              <div class="relative w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
+              <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center shadow-lg">
                 <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
                   <circle cx="12" cy="9" r="2.5"/>
@@ -15,18 +14,18 @@
               </div>
             </div>
             <div>
-              <h1 class="text-3xl font-bold text-white">Enhanced Orders Heatmap</h1>
-              <p class="text-slate-300 mt-2">Advanced visualization with real-time analytics across Lucknow city</p>
+              <h1 class="text-3xl font-bold text-gray-900">Enhanced Orders Heatmap</h1>
+              <p class="text-gray-600 mt-2">Advanced visualization with real-time analytics across Lucknow city</p>
             </div>
           </div>
           
           <!-- Live Data Indicator -->
           <div class="flex items-center space-x-2">
             <div class="flex items-center space-x-2">
-              <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-              <span class="text-sm text-slate-300">Live Data</span>
+              <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+              <span class="text-sm text-gray-600">Live Data</span>
             </div>
-            <div class="text-sm text-slate-400">
+            <div class="text-sm text-gray-500">
               Last updated: {{ lastUpdateTime }}
             </div>
           </div>
@@ -34,20 +33,20 @@
         
         <!-- Enhanced Stats Grid -->
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-          <div class="glass-card-secondary p-4 text-center hover:scale-105 transition-transform duration-300">
-            <div class="text-2xl font-bold text-blue-400">{{ filteredOrders.length }}</div>
-            <div class="text-xs text-slate-300">Total Orders</div>
-            <div class="text-xs text-green-400 mt-1">+{{ Math.floor(Math.random() * 10 + 5) }}% vs yesterday</div>
+          <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:bg-gray-100 transition-colors">
+            <div class="text-2xl font-bold text-blue-600">{{ filteredOrders.length }}</div>
+            <div class="text-xs text-gray-600">Total Orders</div>
+            <div class="text-xs text-green-600 mt-1">+{{ Math.floor(Math.random() * 10 + 5) }}% vs yesterday</div>
           </div>
-          <div class="glass-card-secondary p-4 text-center hover:scale-105 transition-transform duration-300">
-            <div class="text-2xl font-bold text-green-400">{{ deliveredOrders }}</div>
-            <div class="text-xs text-slate-300">Delivered</div>
-            <div class="text-xs text-green-400 mt-1">{{ deliveryRate }}%</div>
+          <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:bg-gray-100 transition-colors">
+            <div class="text-2xl font-bold text-green-600">{{ deliveredOrders }}</div>
+            <div class="text-xs text-gray-600">Delivered</div>
+            <div class="text-xs text-green-600 mt-1">{{ deliveryRate }}%</div>
           </div>
-          <div class="glass-card-secondary p-4 text-center hover:scale-105 transition-transform duration-300">
-            <div class="text-2xl font-bold text-orange-400">{{ pendingOrders }}</div>
-            <div class="text-xs text-slate-300">Pending</div>
-            <div class="text-xs text-orange-400 mt-1">{{ avgDeliveryTime }}h avg</div>
+          <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:bg-gray-100 transition-colors">
+            <div class="text-2xl font-bold text-orange-600">{{ pendingOrders }}</div>
+            <div class="text-xs text-gray-600">Pending</div>
+            <div class="text-xs text-orange-600 mt-1">{{ avgDeliveryTime }}h avg</div>
           </div>
           <div class="glass-card-secondary p-4 text-center hover:scale-105 transition-transform duration-300">
             <div class="text-2xl font-bold text-purple-400">₹{{ totalRevenue }}K</div>

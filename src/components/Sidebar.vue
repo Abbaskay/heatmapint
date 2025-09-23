@@ -1,98 +1,45 @@
 <template>
-  <aside class="w-64 glass-card h-full relative">
-    <!-- Background gradient animation -->
-    <div class="absolute inset-0 bg-gradient-to-br from-purple-600/20 via-blue-500/20 to-cyan-400/20 opacity-50 animate-pulse-slow rounded-lg"></div>
-    
-    <div class="flex flex-col h-full relative z-10">
+  <aside class="w-64 bg-gray-900 h-full">
+    <div class="flex flex-col h-full">
       <!-- Logo/Brand -->
-      <div class="flex items-center justify-center py-8 px-6 border-b border-white/20">
-        <div class="text-center group cursor-pointer">
-          <div class="w-12 h-12 mx-auto mb-2 rounded-full bg-gradient-to-br from-purple-400 to-cyan-400 flex items-center justify-center shadow-lg shadow-purple-500/25 group-hover:shadow-purple-500/50 transition-all duration-300 group-hover:scale-110">
-            <span class="text-white font-bold text-lg">H</span>
+      <div class="flex items-center justify-center py-6 px-6 border-b border-gray-800">
+        <div class="text-center">
+          <div class="w-10 h-10 mx-auto mb-2 rounded-lg bg-blue-600 flex items-center justify-center">
+            <span class="text-white font-bold text-lg">⚡</span>
           </div>
-          <h2 class="text-xl font-bold text-white group-hover:text-purple-300 transition-colors duration-300">Hyperzod</h2>
-          <p class="text-xs text-gray-300 opacity-75">Admin Portal</p>
+          <h2 class="text-lg font-bold text-white">Hyperzod</h2>
+          <p class="text-xs text-gray-400">Admin Portal</p>
         </div>
       </div>
       
       <!-- Navigation Menu -->
-      <nav class="flex-1 px-4 py-6 space-y-3 overflow-y-auto custom-scrollbar">
+      <nav class="flex-1 px-4 py-6 space-y-2">
         <div class="mb-4">
-          <p class="text-xs font-semibold text-gray-300 uppercase tracking-wider px-3 mb-3">Navigation</p>
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider px-3 mb-3">Navigation</p>
         </div>
         
         <router-link 
-          v-for="(item, index) in menuItems" 
+          v-for="item in menuItems" 
           :key="item.name"
           :to="item.path"
-          class="sidebar-item group relative"
-          :class="{ 'active': $route.path === item.path }"
-          :style="{ '--animation-delay': (index * 0.1) + 's' }"
+          class="flex items-center px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
+          :class="{ 'bg-blue-600 text-white': $route.path === item.path }"
         >
-          <!-- Hover background -->
-          <div class="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-cyan-400/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          
-          <!-- Icon with glow effect -->
-          <div class="relative flex items-center">
-            <div class="w-10 h-10 flex items-center justify-center rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 mr-3 group-hover:bg-white/20 group-hover:scale-110 transition-all duration-300">
-              <svg class="w-5 h-5 text-gray-300 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
-                <path :d="item.icon"></path>
-              </svg>
-            </div>
-            
-            <div class="flex-1">
-              <span class="font-medium text-gray-200 group-hover:text-white transition-colors duration-300">{{ item.name }}</span>
-              <div v-if="item.badge" class="inline-flex items-center px-2 py-0.5 rounded-full text-xs bg-gradient-to-r from-purple-500 to-pink-500 text-white ml-2 animate-pulse">
-                {{ item.badge }}
-              </div>
-            </div>
-            
-            <!-- Active indicator -->
-            <div v-if="$route.path === item.path" class="w-2 h-2 rounded-full bg-gradient-to-r from-purple-400 to-cyan-400 ml-auto animate-pulse"></div>
+          <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+            <path :d="item.icon"></path>
+          </svg>
+          <span>{{ item.name }}</span>
+          <div v-if="item.badge" class="ml-auto inline-flex items-center px-2 py-0.5 rounded-full text-xs bg-blue-500 text-white">
+            {{ item.badge }}
           </div>
-          
-          <!-- Active state background -->
-          <div v-if="$route.path === item.path" class="absolute inset-0 bg-gradient-to-r from-purple-500/30 to-cyan-400/30 rounded-lg"></div>
         </router-link>
-        
-        <!-- Quick Actions Section -->
-        <div class="mt-8 pt-6 border-t border-white/20">
-          <p class="text-xs font-semibold text-gray-300 uppercase tracking-wider px-3 mb-3">Quick Actions</p>
-          
-          <button class="w-full flex items-center px-3 py-2 rounded-lg bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 text-green-300 hover:from-green-500/30 hover:to-emerald-500/30 hover:text-green-200 transition-all duration-300 group">
-            <svg class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M10 2L3 7v11a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V7l-7-5z"/>
-            </svg>
-            <span class="text-sm font-medium">Export Data</span>
-          </button>
-        </div>
       </nav>
       
-      <!-- Footer with stats -->
-      <div class="px-4 py-4 border-t border-white/20">
-        <div class="glass-card-secondary p-3 rounded-lg mb-3">
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-xs text-gray-300">Server Status</span>
-            <div class="flex items-center">
-              <div class="w-2 h-2 rounded-full bg-green-400 animate-pulse mr-1"></div>
-              <span class="text-xs text-green-400 font-medium">Online</span>
-            </div>
-          </div>
-          <div class="text-xs text-gray-400">
-            <div class="flex justify-between">
-              <span>Uptime:</span>
-              <span class="text-white">99.9%</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="flex items-center justify-between">
-          <p class="text-xs text-gray-400">© 2024 Hyperzod</p>
-          <div class="flex space-x-1">
-            <div class="w-1 h-1 rounded-full bg-purple-400 animate-pulse"></div>
-            <div class="w-1 h-1 rounded-full bg-blue-400 animate-pulse" style="animation-delay: 0.2s"></div>
-            <div class="w-1 h-1 rounded-full bg-cyan-400 animate-pulse" style="animation-delay: 0.4s"></div>
-          </div>
+      <!-- Footer -->
+      <div class="px-4 py-4 border-t border-gray-800">
+        <div class="bg-gray-800 rounded-lg p-3">
+          <div class="text-sm text-white font-medium">AUTOZOD</div>
+          <div class="text-xs text-gray-400">Autonomous order assignment</div>
         </div>
       </div>
     </div>
