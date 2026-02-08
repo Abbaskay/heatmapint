@@ -1,3 +1,7 @@
+![Vue](https://img.shields.io/badge/Vue-2-green?logo=vue.js)
+![Leaflet](https://img.shields.io/badge/Leaflet-Map-blue)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC?logo=tailwindcss)
+![Dashboard](https://img.shields.io/badge/Admin-Dashboard-black)
 # Enhanced Vue 2 Admin Panel with Interactive Heatmap# Admin Panel with Orders Heatmap
 
 
